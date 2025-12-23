@@ -1,49 +1,47 @@
 # 👻 NetGuardian v2.1 - Ghost Edition
-> **Zaawansowany skaner sieci LAN z interfejsem Glassmorphism**
 
-NetGuardian to autorskie narzędzie do audytu i monitoringu sieci lokalnej, zaprojektowane z myślą o estetyce i funkcjonalności. Program łączy w sobie potęgę biblioteki `Scapy` z nowoczesnym, przezroczystym interfejsem użytkownika.
+**Zaawansowane narzędzie do audytu, monitoringu i zabezpieczania sieci lokalnych (LAN).**
 
-**Autor projektu:** Stanisław Kozioł
+NetGuardian to profesjonalna aplikacja typu Network Scanner, łącząca niskopoziomową analizę pakietów z nowoczesnym, transparentnym interfejsem użytkownika. Program został zaprojektowany do błyskawicznej identyfikacji zasobów sieciowych i monitorowania integralności infrastruktury w czasie rzeczywistym.
+
 ---
 
-## ⚡ Kluczowe Możliwości
+## ✨ Kluczowe Funkcje
 
 ### 🔍 Deep Scan Engine (Silnik ARP)
-Program wykorzystuje niskopoziomowe zapytania ARP (Address Resolution Protocol), co pozwala wykryć urządzenia w sieci, które często ignorują standardowe zapytania PING (ICMP).
+Wykorzystuje precyzyjne zapytania protokołu ARP do mapowania sieci. Pozwala na wykrycie hostów, które są skonfigurowane do ignorowania zapytań ICMP (Ping), co czyni go znacznie skuteczniejszym od standardowych rozwiązań.
 
-### 🏷️ Inteligencja Sieciowa
-- **Vendor Lookup:** Identyfikacja producentów (Apple, Samsung, Tesla, TP-Link) na podstawie bazy OUI.
-- **Hostname Resolution:** Automatyczne pobieranie nazw sieciowych urządzeń (DNS Reverse Lookup).
-- **OS Hinting:** Analiza parametru TTL w celu rozpoznania systemu operacyjnego (Windows vs. Linux/Android).
+### 🏷️ Moduł Inteligencji Sieciowej
+- **Vendor Identification:** Rozpoznawanie producentów sprzętu na podstawie unikalnych identyfikatorów OUI (np. Apple, Samsung, Cisco, TP-Link).
+- **Hostname Resolution:** Próba odczytu nazw sieciowych urządzeń poprzez mechanizm Reverse DNS.
+- **OS Hinting:** Analiza sygnatury TTL (Time To Live) w celu predykcji systemu operacyjnego hosta (Linux/Unix vs Windows).
 
-### 🛡️ System Strażnika (Intruder Alert)
-NetGuardian monitoruje zmiany w sieci. Jeśli podczas kolejnego skanu pojawi się nowy adres MAC, system oznaczy go statusem `!!! NOWY !!!` i wyśle ostrzeżenie na pasku statusu.
+### 🛡️ System Monitorowania Integralności (Intruder Alert)
+Automatyczne porównywanie aktualnego stanu sieci z bazą znanych urządzeń. System natychmiastowo flaguje nieznane adresy MAC jako potencjalne zagrożenie.
+
+### 📈 Live Traffic & Port Sniper
+- **Aktywność Sieciowa:** Monitorowanie ilości pakietów przesyłanych przez interfejs sieciowy (pkt/s).
+- **Skanowanie Usług:** Sprawdzanie statusu krytycznych portów takich jak 22 (SSH), 80 (HTTP) czy 443 (HTTPS).
 
 ---
 
-## 🛠 Technologia i Architektura
+## 🛠️ Specyfikacja Techniczna
 
 | Komponent | Technologia | Zastosowanie |
 | :--- | :--- | :--- |
-| **Interfejs** | `CustomTkinter` | Profesjonalny Dark Mode i Przezroczystość |
-| **Silnik Sieciowy** | `Scapy` | Precyzyjne skanowanie ARP i Sniffing |
-| **Współbieżność** | `Threading` | Płynna praca interfejsu podczas analizy sieci |
-| **API** | `Requests` | Pobieranie danych o producentach |
+| **Język** | `Python 3.13+` | Logika biznesowa i przetwarzanie danych |
+| **Silnik Sieciowy** | `Scapy` | Generowanie i przechwytywanie pakietów ARP/ICMP |
+| **Interfejs** | `CustomTkinter` | Ghost UI z obsługą kanału Alpha (przezroczystość) |
+| **Współbieżność** | `Threading` | Asynchroniczne skanowanie bez blokowania GUI |
 
 ---
 
-## 📦 Instalacja i Uruchomienie
+## 🚀 Instalacja i Wdrożenie
 
-### Wymagania systemowe
-1. **Windows 10/11**
-2. **Npcap** (niezbędny do działania biblioteki Scapy) - [Pobierz Npcap](https://npcap.com/)
-3. **Python 3.10+**
+1. **Wymagania:**
+   - Sterownik [Npcap](https://npcap.com/) zainstalowany w trybie kompatybilności WinPcap.
+   - Środowisko Python 3.13+.
 
-### Szybki start
-1. Sklonuj to repozytorium:
+2. **Przygotowanie środowiska:**
    ```bash
-   git clone [https://github.com/crahdlinuxservers-maker/NetGuardian-Ghost-Edition.git](https://github.com/crahdlinuxservers-maker/NetGuardian-Ghost-Edition.git)
-   
-2. cd NetGuardian-Ghost-Edition
-3. pip install customtkinter scapy requests
-4. python netguardian.py
+   pip install customtkinter scapy requests
