@@ -4,13 +4,6 @@
 NetGuardian to autorskie narzędzie do audytu i monitoringu sieci lokalnej, zaprojektowane z myślą o estetyce i funkcjonalności. Program łączy w sobie potęgę biblioteki `Scapy` z nowoczesnym, przezroczystym interfejsem użytkownika.
 
 **Autor projektu:** Stanisław Kozioł
-
----
-
-## 📸 Podgląd Interfejsu
-![NetGuardian Screenshot](https://via.placeholder.com/1000x650.png?text=Wstaw+tutaj+zrzut+ekranu+ze+swojego+programu!)
-*Zalecane: Wrzuć plik graficzny do repozytorium i podmień ten link, aby pokazać efekt Ghost Mode!*
-
 ---
 
 ## ⚡ Kluczowe Możliwości
